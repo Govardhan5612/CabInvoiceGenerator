@@ -25,4 +25,10 @@ public class CabInvoice {
         }
         return aggregateFare;
     }
+    public Invoice getInvoiceOfRides(Ride[] rides) {
+        int numberOfRides = rides.length;
+        double totalFare = getTotalFare(rides);
+        double averageRideFare = totalFare/numberOfRides;
+        return new Invoice(numberOfRides,totalFare,averageRideFare);
+    }
 }
