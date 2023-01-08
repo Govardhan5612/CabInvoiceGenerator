@@ -7,9 +7,9 @@ public class Invoice {
     double totalFare;
     double averageFarePerRide;
 
-    public Invoice()
-    {
+    public Invoice() {
     }
+
     public Invoice(int totalNumberOfRides, double totalFare, double averageFarePerRide) {
         this.totalNumberOfRides = totalNumberOfRides;
         this.totalFare = totalFare;
@@ -23,6 +23,7 @@ public class Invoice {
         Invoice invoice = (Invoice) o;
         return totalNumberOfRides == invoice.totalNumberOfRides && Double.compare(invoice.totalFare, totalFare) == 0 && Double.compare(invoice.averageFarePerRide, averageFarePerRide) == 0;
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(totalNumberOfRides, totalFare, averageFarePerRide);
