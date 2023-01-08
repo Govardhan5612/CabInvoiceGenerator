@@ -14,4 +14,15 @@ public class CabInvoice {
         else
             return totalFare;
     }
+
+    public double getTotalFare(Ride[] rides)
+    {
+        double aggregateFare = 0;
+        for (Ride ride: rides)
+        {
+            double totalFare = getTotalFare(ride.distance,ride.time);
+            aggregateFare += totalFare;
+        }
+        return aggregateFare;
+    }
 }
